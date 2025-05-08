@@ -32,12 +32,13 @@ body {
     justify-content: center;
     padding: 20px;
     background-color: #fdf6f0;
+    border: 5px solid #f0d5b3;
 }
 
 .character-card {
     background-color: #fff7eb;
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 7px 20px -4px rgb(132, 132, 132);
     overflow: hidden;
     width: 260px;
     font-family: 'Segoe UI', sans-serif;

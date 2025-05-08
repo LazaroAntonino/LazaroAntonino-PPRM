@@ -1,7 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const CharacterCard = ({ id, name, image, status }) => {
+    const {store,dispatch}=useGlobalReducer();
+    
     return (
         <div className="character-card-wrapper">
             <div className="character-card">
@@ -17,11 +20,9 @@ export const CharacterCard = ({ id, name, image, status }) => {
                         <Link to={`/character/${id}`}>
                             <button className="learn-button">Learn More</button>
                         </Link>
-                        <button className="learn-button">Learn More</button>
-                    </div>
+                        <button onClick={() => dispatch({ type: 'set_favourite', payload: name })} className="learn-button fa-solid fa-star"></button>                    </div>
                 </div>
             </div>
         </div>
     );
-
 }

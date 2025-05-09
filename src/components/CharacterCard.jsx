@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const CharacterCard = ({ id, name, image, status }) => {
-    const {store,dispatch}=useGlobalReducer();
-    
+    const { store, dispatch } = useGlobalReducer();
+
     return (
         <div className="character-card-wrapper">
             <div className="character-card">
@@ -16,11 +16,18 @@ export const CharacterCard = ({ id, name, image, status }) => {
                             <span className="fa-solid fa-circle"></span>
                         </p>
                     </div>
-                    <div className="character-buttons">
+                    <div className="character-buttons d-flex justify-content-between mt-3">
                         <Link to={`/character/${id}`}>
-                            <button className="learn-button">Learn More</button>
+                            <button className="btn btn-portal">Learn More</button>
                         </Link>
-                        <button onClick={() => dispatch({ type: 'set_favourite', payload: name })} className="learn-button fa-solid fa-star"></button>                    </div>
+                        <button
+                            onClick={() => dispatch({ type: 'set_favourite', payload: name })}
+                            className={`btn btn-fav ${store.favourites.includes(name) ? 'text-warning' : 'text-white'}`}
+                            aria-label="Add to Favourites"
+                        >
+                            <i className="fa-solid fa-star"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

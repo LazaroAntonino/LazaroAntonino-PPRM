@@ -1,7 +1,7 @@
 body {
-    background-image: url('https://sdmntpritalynorth.oaiusercontent.com/files/00000000-4d0c-6246-b898-56dbf66c7a7f/raw?se=2025-05-07T11%3A50%3A18Z&sp=r&sv=2024-08-04&sr=b&scid=f536074a-302a-5d91-b698-86f286d7a3d0&skoid=06e05d6f-bdd9-4a88-a7ec-2c0a779a08ca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-07T05%3A37%3A43Z&ske=2025-05-08T05%3A37%3A43Z&sks=b&skv=2024-08-04&sig=hg1SuDJIQ0xsmBzwzbCZUAM5H4i2IH3hZVwym4EzWPU%3D');
+    background-image: url('assets/img/taelRickAndMorty.png');
     background-repeat: repeat;
-    background-size: 500px;
+    background-size: 300px;
 }
 
 .slider-container {
@@ -12,6 +12,22 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.5%;
     /* 0.0 (transparente) a 1.0 (opaco) */
+}
+
+.custom-button {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Negro semitransparente */
+    border: none;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Oscurece un poco al pasar el ratón */
+    transform: scale(1.1);
+    /* Efecto de aumento */
 }
 
 .slider {
@@ -136,3 +152,88 @@ body {
     background-color: #dadada;
 }
 
+.navbar-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    /* Asegura que la imagen se ajuste bien */
+}
+
+.navbar-color {
+    background: linear-gradient(to right, #014129, #017a5f);
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.custom-dropdown-toggle {
+	background: linear-gradient(145deg, #03dac5, #00b894);
+	color: #1e1d1d;
+	border: none;
+	font-weight: bold;
+	box-shadow: 0 0 10px #00ffc3;
+	transition: background 0.3s ease;
+}
+.custom-dropdown-toggle:hover {
+	background: #00ffc3;
+	color: #000;
+}
+
+.custom-dropdown {
+	background: rgba(12, 20, 30, 0.95);
+	border: 1px solid #00ffc3;
+	box-shadow: 0 4px 12px rgba(247, 247, 247, 0.3);
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.text-glow {
+	color: #00ffc3;
+	text-shadow: 0 0 5px #00ffc3;
+}
+
+.dropdown-item {
+	border-radius: 6px;
+	margin-bottom: 5px;
+}
+
+.dropdown-item:hover {
+	background-color: rgba(0, 255, 195, 0.2);
+}
+/* Learn More - versión compacta */
+.btn-portal {
+	background: radial-gradient(circle, #00ffc3 0%, #00b894 100%);
+	color: #000;
+	font-weight: 500;
+	font-size: 0.85rem;
+	border: none;
+	padding: 0.3rem 0.75rem;
+	border-radius: 10px;
+	box-shadow: 0 0 6px #00ffc3;
+	transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-portal:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px #00ffc3;
+}
+
+/* Favourites - más pequeño y elegante */
+.btn-fav {
+	background: transparent;
+	border: 1.5px solid #00ffc3;
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 0 5px rgba(0, 255, 195, 0.3);
+	padding: 0;
+}
+.btn-fav:hover {
+	background-color: rgba(0, 255, 195, 0.1);
+	transform: scale(1.1);
+}
+.btn-fav.text-warning {
+	color: #ffc107 !important;
+}

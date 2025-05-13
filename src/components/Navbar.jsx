@@ -10,7 +10,7 @@ export const Navbar = () => {
 				{/* Logo alineado a la izquierda */}
 				<Link to="/" className="navbar-brand d-flex align-items-center">
 					<img src={favicon} alt="Logo" className="navbar-logo me-2" style={{ height: "40px" }} />
-					<span className="fw-bold text-white">Rick & Morty</span>
+					<span className="fw-bold text-white textShadow">Rick & Morty</span>
 				</Link>
 
 				{/* Botón de colapso */}

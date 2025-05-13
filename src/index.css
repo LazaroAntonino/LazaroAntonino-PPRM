@@ -1,9 +1,14 @@
 body {
-    background-image: url('assets/img/taelRickAndMorty.png');
-    background-repeat: repeat;
-    background-size: 300px;
+  background-image: url('assets/img/RickAndMortyWeb2.png'); /* Reemplaza con tu ruta */
+  background-repeat: cover;
+  background-size: 20%; /* Ajusta el tamaño del tile si lo ves muy grande o pequeño */
+  margin: 0;
+  padding: 0;
 }
 
+.textShadow{
+    text-shadow: 1px 1px 2px #000000aa;
+}
 .slider-container {
     overflow-x: auto;
     overflow-y: hidden;

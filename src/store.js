@@ -1,5 +1,5 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
     all_characters_info: null,
     character_info: null,
     favourites: []
@@ -7,19 +7,22 @@ export const initialStore=()=>{
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
     case 'get_all_characters':
       return {
         ...store,
         all_characters_info: action.payload
       };
     case 'set_favourite':
-      const alreadyFav = store.favourites.some(elm=>elm === action.payload)
-      console.log('he entrado aquí, el action es: '  + action.payload)
-      return{
+      const alreadyFav = store.favourites.some(elm => elm.id === action.payload.id);
+      console.log('he entrado aquí, el action es: ', action.payload);
+      return {
         ...store,
-        favourites: alreadyFav ? store.favourites.filter(elm=>elm !== action.payload) : [...store.favourites,action.payload]
+        favourites: alreadyFav
+          ? store.favourites.filter(elm => elm.id !== action.payload.id)
+          : [...store.favourites, action.payload],
       };
+
     case 'get_character_info':
       return {
         ...store,
@@ -27,5 +30,5 @@ export default function storeReducer(store, action = {}) {
       };
     default:
       throw Error('Unknown action.');
-  }    
+  }
 }

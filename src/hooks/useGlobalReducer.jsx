@@ -1,5 +1,5 @@
 // Import necessary hooks and functions from React.
-import { useContext, useReducer, createContext, useEffect } from "react";
+import { useContext, useReducer, createContext, useEffect, useState } from "react";
 import storeReducer, { initialStore } from "../store"  // Import the reducer and the initial state.
 import RickApiServices from "../services/RickApiServices.js"
 
@@ -13,9 +13,13 @@ export function StoreProvider({ children }) {
     // Initialize reducer with the initial state.
     const [store, dispatch] = useReducer(storeReducer, initialStore())
 
-    useEffect(()=>{
-        RickApiServices.getAllCharacters().then(data=>dispatch({type:'get_all_characters',payload:data.results}))
-    },[])
+    const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        RickApiServices.getAllCharacters(currentPage).then(data =>
+            dispatch({ type: 'get_all_characters', payload: data.results })
+        );
+    }, [currentPage]);
     // Provide the store and dispatch method to all child components.
     return <StoreContext.Provider value={{ store, dispatch }}>
         {children}

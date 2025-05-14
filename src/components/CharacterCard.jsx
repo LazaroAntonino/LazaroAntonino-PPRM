@@ -21,8 +21,8 @@ export const CharacterCard = ({ id, name, image, status }) => {
                             <button className="btn btn-portal">Learn More</button>
                         </Link>
                         <button
-                            onClick={() => dispatch({ type: 'set_favourite', payload: name })}
-                            className={`btn btn-fav ${store.favourites.includes(name) ? 'text-warning' : 'text-white'}`}
+                            onClick={() => dispatch({ type: 'set_favourite', payload: { name:name, id:id } })}
+                            className={`btn btn-fav ${store.favourites.some(fav => fav.id === id) ? 'text-warning' : 'text-white'}`}
                             aria-label="Add to Favourites"
                         >
                             <i className="fa-solid fa-star"></i>

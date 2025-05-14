@@ -40,23 +40,25 @@ export const Navbar = () => {
 						</button>
 						<ul className="dropdown-menu custom-dropdown dropdown-menu-end p-2" aria-labelledby="dropdownMenuButton">
 							<li className="dropdown-header text-center text-glow">⭐ {store.favourites.length} Favourite(s)</li>
-							<hr className="dropdown-divider" />
+
 							{store.favourites?.length > 0 ? (
 								store.favourites.map((el, index) => (
 									<li key={index} className="dropdown-item d-flex justify-content-between align-items-center text-white">
-										{el}
-										<span className="btn p-0 text-danger" onClick={() => dispatch({ type: 'set_favourite', payload: el })}>
+										<Link to={`/character/${el.id}`} className="text-white text-decoration-none">
+											{el.name}
+										</Link>
+										<span className="btn p-0 text-danger ps-4" onClick={() => dispatch({ type: 'set_favourite', payload: el })}>
 											<i className="fa-solid fa-trash-can"></i>
 										</span>
 									</li>
 								))
 							) : (
-								<li className="dropdown-item text-muted text-center">No favourites yet.</li>
+								<li className="dropdown-item text-center text-white">No favourites yet.</li>
 							)}
 						</ul>
 					</div>
 				</div>
 			</div>
-		</nav>
+		</nav >
 	);
 };

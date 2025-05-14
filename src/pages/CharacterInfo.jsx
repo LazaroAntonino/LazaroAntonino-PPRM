@@ -97,12 +97,13 @@ export const CharacterInfo = () => {
             </li>
           </ul>
           <button
-            onClick={() => dispatch({ type: 'set_favourite', payload: character.name })}
-            className={`btn btn-fav ${store.favourites.includes(character.name) ? 'text-warning' : 'text-white'}`}
+            onClick={() => dispatch({ type: 'set_favourite', payload: { name: character.name, id: character.id } })}
+            className={`btn btn-fav ${store.favourites.some(fav => fav.id === character.id) ? 'text-warning' : 'text-white'}`}
             aria-label="Add to Favourites"
           >
             <i className="fa-solid fa-star"></i>
           </button>
+
         </div>
       </div>
       <Link to={`/character/${Number(id) + 1}`}>
